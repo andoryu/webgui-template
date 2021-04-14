@@ -1,0 +1,21 @@
+{
+  "name": "webui",
+  "authors": [
+    "andoryu <andrewhowa@gmail.com>"
+  ],
+  "description": "web-ui testbed",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.6.3"
+  }
+}

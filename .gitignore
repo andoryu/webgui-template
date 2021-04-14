@@ -1,0 +1,7 @@
+venv/
+bower_components/
+.vscode/
+
+front/css/vendor
+front/js/vendor
+front/img
