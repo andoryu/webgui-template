@@ -2,6 +2,7 @@ venv/
 front/assets/vendor
 .vscode/
 
-front/css/vendor
-front/js/vendor
+# ignoring generated js directory
+front/assets/js
+
 front/img
