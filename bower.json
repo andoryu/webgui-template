@@ -6,7 +6,7 @@
   "description": "web-ui testbed",
   "main": "",
   "license": "MIT",
-  "homepage": "",
+  "homepage": "nil",
   "private": true,
   "ignore": [
     "**/.*",
@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "foundation-sites": "^6.6.3"
+    "normalize.css": "^8.0.1",
+    "socket.io": "^4.0.1"
   }
 }

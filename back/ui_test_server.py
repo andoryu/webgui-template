@@ -3,24 +3,32 @@ from flask import Flask
 from flask import render_template
 from flask import send_from_directory
 
-app = Flask(__name__, static_url_path='/', static_folder="../front",
-                        template_folder="../front/views")
+from flask_socketio import emit, SocketIO
+
+
+app = Flask(__name__, static_url_path='/', static_folder="../front/assets",
+                        template_folder="../front/views/")
+
+app.config['SECRET KEY'] = 'deadbeef'
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/css/<path:path>")
+@app.route("/assets/<path:path>")
 def send_css(path):
-    return send_from_directory('../front/css', path)
+    return send_from_directory('../front/assets/', path)
 
-@app.route("/js/<path:path>")
-def send_js(path):
-    return send_from_directory('../front/js', path)    
+@socketio.on('sys')
+def websocket_system(data):
+    print("sys:", data)
+    emit("sys", "Wallaby Ted's cousin - Roo Ted")
 
-@app.route("/images/<path:path>")
-def send_imgs(path):
-    return send_from_directory('../front/imgs', path)    
+@socketio.on('app')
+def websocket_app(data):
+    print("app:", data)
 
 
-app.run(debug=True)
+if __name__ == "__main__":
+    socketio.run(app)

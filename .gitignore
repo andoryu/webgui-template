@@ -1,5 +1,5 @@
 venv/
-bower_components/
+front/assets/vendor
 .vscode/
 
 front/css/vendor
