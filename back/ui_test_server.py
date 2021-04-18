@@ -22,8 +22,11 @@ def send_css(path):
 
 @socketio.on('sys')
 def websocket_system(data):
-    print("sys:", data)
-    emit("sys", "Wallaby Ted's cousin - Roo Ted")
+    message = {
+        'command': 'log',
+        'data'   : "Wallaby Ted's cousin - Roo Ted"
+    }
+    emit("sys", message)
 
 @socketio.on('app')
 def websocket_app(data):

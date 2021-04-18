@@ -31,12 +31,17 @@ main {
 }
 
 /*  canvas panel */
-main > article {
+main > div#article {
     flex: 1;
     background: #282c34;
     border-right: dimgray 1px solid;
     border-left: dimgray 1px solid;
 
+    padding: 5px;
+}
+
+canvas {
+    background-color: #000000;
 }
 
 /*  system actions panel */
@@ -49,10 +54,15 @@ main > nav {
 
 /* Logging panel */
 main > aside {
-    flex: 0 0 30vw;
+    flex: 0 0 20vw;
 
     background: #282c34;
     visibility: visible;
+
+    font-size: 0.75em;
+    padding: 5px;
+
+    overflow: auto;
 }
 
 footer {
